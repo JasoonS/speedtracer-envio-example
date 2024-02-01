@@ -1,0 +1,18 @@
+name: speedtracer
+networks:
+- id: 8453
+  start_block: 0
+  contracts:
+  - name: SpeedtracerRaceResult
+    address:
+    - 0x7395212473FC2E545d3d3cbdD8c1F11d615F6Fc2
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed account, uint256 indexed id)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool isApproved)
+    - event: OwnershipHandoverCanceled(address indexed pendingOwner)
+    - event: OwnershipHandoverRequested(address indexed pendingOwner)
+    - event: OwnershipTransferred(address indexed oldOwner, address indexed newOwner)
+    - event: PlayerBanned(address player, uint256 until)
+    - event: ResultRecorded(uint128 time, uint256 track, uint256 tokenId)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed id)

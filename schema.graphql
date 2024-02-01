@@ -1,0 +1,77 @@
+type EventsSummary {
+  id: ID!
+  speedtracerRaceResult_Approval: [SpeedtracerRaceResult_Approval!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_ApprovalCount: BigInt!
+  speedtracerRaceResult_ApprovalForAll: [SpeedtracerRaceResult_ApprovalForAll!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_ApprovalForAllCount: BigInt!
+  speedtracerRaceResult_OwnershipHandoverCanceled: [SpeedtracerRaceResult_OwnershipHandoverCanceled!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_OwnershipHandoverCanceledCount: BigInt!
+  speedtracerRaceResult_OwnershipHandoverRequested: [SpeedtracerRaceResult_OwnershipHandoverRequested!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_OwnershipHandoverRequestedCount: BigInt!
+  speedtracerRaceResult_OwnershipTransferred: [SpeedtracerRaceResult_OwnershipTransferred!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_OwnershipTransferredCount: BigInt!
+  speedtracerRaceResult_PlayerBanned: [SpeedtracerRaceResult_PlayerBanned!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_PlayerBannedCount: BigInt!
+  speedtracerRaceResult_ResultRecorded: [SpeedtracerRaceResult_ResultRecorded!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_ResultRecordedCount: BigInt!
+  speedtracerRaceResult_Transfer: [SpeedtracerRaceResult_Transfer!]! @derivedFrom(field: "eventsSummary")
+  speedtracerRaceResult_TransferCount: BigInt!
+}
+
+type SpeedtracerRaceResult_Approval {
+  id: ID!
+  owner: String!
+  account: String!
+  event_id: BigInt!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  isApproved: Boolean!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_OwnershipHandoverCanceled {
+  id: ID!
+  pendingOwner: String!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_OwnershipHandoverRequested {
+  id: ID!
+  pendingOwner: String!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_OwnershipTransferred {
+  id: ID!
+  oldOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_PlayerBanned {
+  id: ID!
+  player: String!
+  until: BigInt!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_ResultRecorded {
+  id: ID!
+  time: BigInt!
+  track: BigInt!
+  tokenId: BigInt!
+  eventsSummary: String!
+}
+
+type SpeedtracerRaceResult_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  event_id: BigInt!
+  eventsSummary: String!
+}
